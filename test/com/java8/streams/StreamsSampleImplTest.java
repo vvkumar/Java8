@@ -8,23 +8,23 @@ import java.util.Map;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StreamsSampleImplTest {
 
-	StreamsSample obj;
-	List<String> techs;
+	static StreamsSample obj;
+	static List<String> techs;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	System.out.println("Getting called");
 		obj = new StreamSampleImpl();
 		techs = Arrays.asList("Java:J2EE", "DotNet:MVC", "DotNet:C#.Net", "Java:JMS", "Java:EJB", "Java:Spring", "DotNet:ASP.Net","", "Java:JMS");
 		
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
+	
 
 	@Test
 	public void testGetTechCounts() {
